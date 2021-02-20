@@ -50,14 +50,13 @@ def productElimination():
     cursor.execute("USE db_test")
 
     # variables
-    id = str(prod1.get())
+    id = prod1.get()
 
     # insert
     try:
         sql = "DELETE FROM Table2 WHERE id = %s"
-        val = (id)
 
-        cursor.execute(sql, val)
+        cursor.execute(sql, id)
         db.commit()
 
         tkinter.messagebox.showinfo('Success', "Product deleted successfully!")
@@ -182,21 +181,21 @@ def addProd():
 
     # variable frame
     labelFrame = Frame(root2, bg='black')
-    labelFrame.place(relx=0.1, rely=0.4, relwidth=0.8, relheight=0.3)
+    labelFrame.place(relx=0.1, rely=0.4, relwidth=0.8, relheight=0.4)
 
     # id
     lb1 = Label(labelFrame, text="ID: ", bg='black', fg='white')
-    lb1.place(relx=0.05, rely=0.1, relheight=0.08)
+    lb1.place(relx=0.05, rely=0.2, relheight=0.08)
 
     prod1 = Entry(labelFrame)
-    prod1.place(relx=0.3, rely=0.1, relwidth=0.62, relheight=0.08)
+    prod1.place(relx=0.3, rely=0.2, relwidth=0.62, relheight=0.08)
 
     # pc
     lb2 = Label(labelFrame, text="PC: ", bg='black', fg='white')
-    lb2.place(relx=0.05, rely=0.25, relheight=0.08)
+    lb2.place(relx=0.05, rely=0.3, relheight=0.08)
 
     prod2 = Entry(labelFrame)
-    prod2.place(relx=0.3, rely=0.25, relwidth=0.62, relheight=0.08)
+    prod2.place(relx=0.3, rely=0.3, relwidth=0.62, relheight=0.08)
 
     # pa
     lb3 = Label(labelFrame, text="PA: ", bg='black', fg='white')
@@ -207,31 +206,31 @@ def addProd():
 
     # pv
     lb4 = Label(labelFrame, text="PV: ", bg='black', fg='white')
-    lb4.place(relx=0.05, rely=0.55, relheight=0.08)
+    lb4.place(relx=0.05, rely=0.5, relheight=0.08)
 
     prod4 = Entry(labelFrame)
-    prod4.place(relx=0.3, rely=0.55, relwidth=0.62, relheight=0.08)
+    prod4.place(relx=0.3, rely=0.5, relwidth=0.62, relheight=0.08)
 
     # pf
     lb5 = Label(labelFrame, text="PF: ", bg='black', fg='white')
-    lb5.place(relx=0.05, rely=0.7, relheight=0.08)
+    lb5.place(relx=0.05, rely=0.6, relheight=0.08)
 
     prod5 = Entry(labelFrame)
-    prod5.place(relx=0.3, rely=0.7, relwidth=0.62, relheight=0.08)
+    prod5.place(relx=0.3, rely=0.6, relwidth=0.62, relheight=0.08)
 
     # data
     lb6 = Label(labelFrame, text="DATA: ", bg='black', fg='white')
-    lb6.place(relx=0.05, rely=0.85, relheight=0.08)
+    lb6.place(relx=0.05, rely=0.7, relheight=0.08)
 
     prod6 = Entry(labelFrame)
-    prod6.place(relx=0.3, rely=0.85, relwidth=0.62, relheight=0.08)
+    prod6.place(relx=0.3, rely=0.7, relwidth=0.62, relheight=0.08)
 
     # status
     lb7 = Label(labelFrame, text="STATUS: ", bg='black', fg='white')
-    lb7.place(relx=0.05, rely=1, relheight=0.08)
+    lb7.place(relx=0.05, rely=0.8, relheight=0.08)
 
     prod7 = Entry(labelFrame)
-    prod7.place(relx=0.3, rely=1, relwidth=0.62, relheight=0.08)
+    prod7.place(relx=0.3, rely=0.8, relwidth=0.62, relheight=0.08)
 
     # submit
     submitbut = Button(root2, text = "SUBMIT", bg = '#d1ccc0', fg = 'black', command = productRegistration)
